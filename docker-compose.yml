@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: threatlens-postgres
+    environment:
+      POSTGRES_DB: threatlens
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - threatlens_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  threatlens_postgres_data:
